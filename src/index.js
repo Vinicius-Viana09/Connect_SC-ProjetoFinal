@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router , Switch, Redirect} from 'react-router-dom';
+import { Route, BrowserRouter as Router , Routes } from 'react-router-dom';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './pages/Home/App'
+import Home from './pages/Home/Home'
 
 const routing = (
   <Router>
     <div>
-      <Switch>
+      <Routes>
         <Route exact path="/" component={Home} /> {/* Home */}
-      </Switch>
+      </Routes>
     </div>
   </Router>
 );
