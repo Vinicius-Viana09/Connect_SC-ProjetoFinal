@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router , Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './pages/Home/Home'
+import Home from './pages/Home/Home.jsx'
 
 const routing = (
-  <Router>
+  <BrowserRouter>
     <div>
       <Routes>
-        <Route exact path="/" component={Home} /> {/* Home */}
+        <Route exact path="/" element={<Home/>} /> {/* Home */}
       </Routes>
     </div>
-  </Router>
+  </BrowserRouter>
 );
 
 ReactDOM.render(
