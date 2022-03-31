@@ -27,7 +27,7 @@ function Home() {
         <section>
           <div className="container_section">
             <div className="box_cadastrar">
-              <h2>Cadastrar</h2>
+              <h2 className="h2_cadastrar" >Cadastrar</h2>
               <form action="">
                 <form action="">
                   <div className="box_form">
@@ -42,51 +42,57 @@ function Home() {
                     />
                     <input type="file" />
 
-                    <img className="cadastrar_campanha" src={cadastrar} alt="botão cadastrar" />
+                    <button className="cadastrar_campanha">
+                      <img className="img_cadastrar" src={cadastrar} alt="botão cadastrar" />
+                    </button>
                   </div>
                 </form>
               </form>
             </div>
             <div className="box_preview">
-              <img src={exemplo} alt="imagem exemplo" />
-              <div>
-                <img src={esquerda} alt="botão esquerda" />
-                <img src={direita} alt="botão direita" />
+              <img className="img_exemplo" src={exemplo} alt="imagem exemplo" />
+              <div className="controle_preview">
+                <img className="botao_controle" src={esquerda} alt="botão esquerda" />
+                <img className="botao_controle" src={direita} alt="botão direita" />
               </div>
             </div>
           </div>
         </section>
 
         <section>
-          <div>
-            <h2>Registros</h2>
-            <div>
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nome da Campanha</th>
-                    <th>Usuário</th>
-                    <th>Data de Publicação</th>
-                    <th>Data de Expiração</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
+          <div className="container_section_2">
+            <div className="box_registro">
+              <h2 className="h2_registro" >Registros</h2>
+              <div className="container_table">
+                <table>
+                  <div className="box_table">
+                    <thead className="box_thead">
+                      <tr>
+                        <th>Nome da Campanha</th>
+                        <th>Usuário</th>
+                        <th>Data de Publicação</th>
+                        <th>Data de Expiração</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
 
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                      <div>
-                        <button><img src={editar} alt="" /></button>
-                        <button><img src={excluir} alt="" /></button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                          <div className="box_botao">
+                            <button className="botao_acoes"><img src={editar} alt="" /></button>
+                            <button className="botao_acoes"><img src={excluir} alt="" /></button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </div>
+                </table>
+              </div>
             </div>
           </div>
         </section>
