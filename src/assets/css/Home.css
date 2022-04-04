@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -36,6 +37,10 @@ h1{
     width: 405px;
     color: #fff;
     font-weight: normal;
+}
+
+h3{
+    display: none;
 }
 
 .icon_header{
@@ -90,6 +95,11 @@ input{
     border-radius: 10px;
     border: none;
     padding: 5px;
+    box-shadow: 0px 0px 15px rgba(63, 61, 86, 0.14);
+}
+
+.input_file{
+    box-shadow: none;
 }
 
 .cadastrar_campanha{
@@ -101,6 +111,11 @@ input{
     border-radius: 55px;
     color: #CB1E36;
     background-color: transparent;
+    cursor: pointer;
+}
+
+.cadastrar_campanha_2{
+    display: none;
 }
 
 .img_cadastrar{
@@ -120,7 +135,7 @@ input{
 }
 
 .img_exemplo{
-    height: 4900px;
+    height: 500px;
     width: 280px;
 }
 
@@ -176,10 +191,30 @@ input{
 }
 
 th{
-    width: 210px;
+    width: 200px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+td{
+    font-size: 12px;
+    color: #fff;
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    word-break: normal;
+}
+
+tr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 table{
+    width: 1000px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -188,10 +223,222 @@ table{
 .botao_acoes{
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    height: 28px;
+    width: 28px;
+}
+
+.img_acoes{
+    height: 28px;
+    width: 28px;
 }
 
 .box_botao{
     width: 65px;
     display: flex;
     justify-content: space-between;
+}
+
+@media (max-width: 991px){
+
+    header{
+        height: 70px;
+    }
+
+    .box_header{
+        width: 350px;
+    }
+
+    .icon_header {
+        width: 30px;
+        height: 30px;
+    }
+    
+    h1{
+        font-size: 30px;
+    }
+
+    .box_cadastrar{
+        width: 320px;
+        height: 460px;
+        border-radius: 20px;
+    }
+
+    input{
+        width: 240px;
+        margin-top: 30px;
+        height: 25px;
+        border-radius: 7px;
+    }
+
+    .h2_cadastrar{
+        font-size: 35px;
+        margin-bottom: 5px;
+    }
+
+    .img_cadastrar{
+        height: 65px;
+        width: 65px;
+    }
+
+    .cadastrar_campanha{
+        height: 65px;
+        width: 65px;
+    }
+
+    .cadastrar_campanha_2{
+        display: none;
+    }
+
+    .img_exemplo{
+        height: 410px;
+        width: 100%;
+    }
+
+    .box_preview{
+        height: 410px;
+        width: 240px;
+    }
+
+    .controle_preview{
+        width: 120px;
+    }
+
+    .h2_registro{
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    th{
+        font-size: 10px;
+        width: 120px;
+    }
+
+    td{
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .box_botao{
+        width: 40px;
+    }
+
+    .botao_acoes{
+        height: 20px;
+        width: 20px;
+    }
+
+    .img_acoes{
+        height: 12px;
+        width: 12px;
+    }
+
+    .box_thead{
+        width: 100%;
+    }
+    
+    tr{
+        width: 60%;
+    }
+
+    tbody{
+        display: flex;
+        justify-content: center;
+    }
+
+    table{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    thead{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    .box_header{
+        display: none;
+    }
+
+    .icon_header{
+        display: none;
+    }
+
+    .box_preview{
+        display: none;
+    }
+
+    .box_registro{
+        display: none;
+    }
+
+    .container_section{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .container_section_2{
+        display: none;
+    }
+
+    .section_2{
+        display: none;
+    }
+
+    .box_cadastrar{
+        background-color: #fff;
+    }
+
+    .cadastrar_campanha{
+        display: none;
+    }
+
+    .cadastrar_campanha_2{
+        display: flex;
+        margin-top: 45px;
+        box-shadow: 0px 0px 15px rgb(63 61 86 / 14%);
+        border: none;
+        border-radius: 55px;
+        color: #CB1E36;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .img_cadastrar{
+        height: 65px;
+        width: 65px;
+    }
+
+    main{
+        background-color: #CB1E36;
+        height: 100vh;
+        background-image: url("../img/cadastro\ resp.svg");
+        background-repeat: no-repeat;
+        background-size: 100px;
+        display: flex;
+    }
+
+    h3{
+        display: flex;
+        width: 290px;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    .h2_cadastrar{
+        display: none;
+    }
+
+    .box_cadastrar{
+        height: 400px;
+    }
+
 }

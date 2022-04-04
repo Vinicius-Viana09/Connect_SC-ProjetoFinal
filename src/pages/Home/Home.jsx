@@ -8,6 +8,7 @@ import esquerda from '../../assets/img/esquerda.svg'
 import cadastrar from '../../assets/img/cadastrar.svg'
 import editar from '../../assets/img/editar.svg'
 import excluir from '../../assets/img/remover.svg'
+import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
 
 function Home() {
   return (
@@ -24,8 +25,9 @@ function Home() {
 
       <main>
 
-        <section>
+        <section className="section_1">
           <div className="container_section">
+            <h3>Cadastrar Campanha</h3>
             <div className="box_cadastrar">
               <h2 className="h2_cadastrar" >Cadastrar</h2>
               <form action="">
@@ -40,10 +42,13 @@ function Home() {
                     <input type="date"
                       placeholder="Data de Expiração"
                     />
-                    <input type="file" />
+                    <input className="input_file" type="file" />
 
                     <button className="cadastrar_campanha">
                       <img className="img_cadastrar" src={cadastrar} alt="botão cadastrar" />
+                    </button>
+                    <button className="cadastrar_campanha_2">
+                      <img className="img_cadastrar" src={cadastrar_resp} alt="botão cadastrar" />
                     </button>
                   </div>
                 </form>
@@ -59,7 +64,7 @@ function Home() {
           </div>
         </section>
 
-        <section>
+        <section className="section_2">
           <div className="container_section_2">
             <div className="box_registro">
               <h2 className="h2_registro" >Registros</h2>
@@ -78,14 +83,14 @@ function Home() {
 
                     <tbody>
                       <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>aaaaaaa</td>
+                        <td>aaaaaa</td>
+                        <td>aaaaaaa</td>
+                        <td>aaaaa</td>
                         <td>
                           <div className="box_botao">
-                            <button className="botao_acoes"><img src={editar} alt="" /></button>
-                            <button className="botao_acoes"><img src={excluir} alt="" /></button>
+                            <button className="botao_acoes"><img className="img_acoes" src={editar} alt="" /></button>
+                            <button className="botao_acoes"><img className="img_acoes" src={excluir} alt="" /></button>
                           </div>
                         </td>
                       </tr>
