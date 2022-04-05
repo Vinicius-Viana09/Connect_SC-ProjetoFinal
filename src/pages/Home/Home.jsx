@@ -1,4 +1,5 @@
 import '../../assets/css/Home.css';
+import axios from 'axios';
 
 import icone from '../../assets/img/icone.svg'
 import user from '../../assets/img/user-icon.svg'
@@ -9,10 +10,37 @@ import cadastrar from '../../assets/img/cadastrar.svg'
 import editar from '../../assets/img/editar.svg'
 import excluir from '../../assets/img/remover.svg'
 import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
+import { Component } from 'react';
 
-function Home() {
-  return (
-    <div className="App">
+export default class CadastrarCampanha extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      listaCampanha: [],
+      usuario: '',
+      campanha: '',
+      dataInicio: new Date(),
+      dataFim: new Date(),
+      arquivo: ''
+    }
+  };
+  
+  buscarCampanhas = () => {
+    fetch('http://localhost:5000/api/Campanhas/ListarTodos')
+
+    .then(resposta => resposta.json())
+    
+    .then(dados => this.setState({ listaUsuario: dados }))
+  };
+  
+  componentDidMount(){
+    this.buscarCampanhas()
+  }
+  
+  
+  render() {
+    return (
+      <div className="App">
       <header>
         <div className="container container_header">
           <div className="box_header">
@@ -30,20 +58,26 @@ function Home() {
             <h3>Cadastrar Campanha</h3>
             <div className="box_cadastrar">
               <h2 className="h2_cadastrar" >Cadastrar</h2>
-              <form action="">
-                <form action="">
-                  <div className="box_form">
+              <form>
+                <form onSubmit={this.cadastrarCampanha}>
+                  <div className="box_form"
+                    style={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      width: '20vw',
+                    }}
+                    >
                     <input type="text"
                       placeholder="Nome da Campanha:"
-                    />
+                      />
                     <input type="date"
                       placeholder="Data de Início:"
-                    />
+                      />
                     <input type="date"
                       placeholder="Data de Expiração"
+                      />
+                    <input className="input_file" type="file"
                     />
-                    <input className="input_file" type="file" />
-
                     <button className="cadastrar_campanha">
                       <img className="img_cadastrar" src={cadastrar} alt="botão cadastrar" />
                     </button>
@@ -54,6 +88,8 @@ function Home() {
                 </form>
               </form>
             </div>
+
+
             <div className="box_preview">
               <img className="img_exemplo" src={exemplo} alt="imagem exemplo" />
               <div className="controle_preview">
@@ -81,19 +117,23 @@ function Home() {
                       </tr>
                     </thead>
 
-                    <tbody>
-                      <tr>
-                        <td>aaaaaaa</td>
-                        <td>aaaaaa</td>
-                        <td>aaaaaaa</td>
-                        <td>aaaaa</td>
-                        <td>
-                          <div className="box_botao">
-                            <button className="botao_acoes"><img className="img_acoes" src={editar} alt="" /></button>
-                            <button className="botao_acoes"><img className="img_acoes" src={excluir} alt="" /></button>
-                          </div>
-                        </td>
-                      </tr>
+                    <tbody className='tb'>
+                      {this.state.listaCampanha.map((campanhas) => {
+                        return (
+                          <tr key={campanhas.idCamapnha}>
+                            <td>{campanhas.nomeCampanha}</td>
+                            <td> teste</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                              <div className="box_botao">
+                                <button className="botao_acoes"><img className="img_acoes" src={editar} alt="" /></button>
+                                <button className="botao_acoes"><img className="img_acoes" src={excluir} alt="" /></button>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </div>
                 </table>
@@ -104,6 +144,7 @@ function Home() {
       </main>
     </div>
   );
+};
 }
 
-export default Home;
+
