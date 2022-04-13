@@ -7,11 +7,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+main{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .container_header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
+    width: 70%;
 }
 
 
@@ -28,25 +33,26 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    width: 500px;
+    width: 400px;
     justify-content: space-between;
 }
 
 h1{
-    font-size: 40px;
+    font-size: 2em;
     width: 405px;
     color: #fff;
     font-weight: normal;
-}
-
-h3{
-    display: none;
 }
 
 .icon_header{
     width: 40px;
     height: 50px;
 }
+
+h3{
+    display: none;
+}
+
 
 section{
     width: 100%;
@@ -58,14 +64,13 @@ section{
     margin-top: 60px;
     width: 70%;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 
 .box_cadastrar{
-    width: 500px;
-    height: 550px;
+    width: 700px;
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,7 +80,7 @@ section{
 }
 
 .h2_cadastrar{
-    font-size: 55px;
+    font-size: 4em;
     font-weight: bolder;
     color: #fff;
     margin-bottom: 20px;
@@ -89,8 +94,8 @@ section{
 }
 
 input{
-    width: 415px;
-    height: 35px;
+    width: 500px;
+    height: 40px;
     margin-top: 35px;
     border-radius: 10px;
     border: none;
@@ -98,8 +103,24 @@ input{
     box-shadow: 0px 0px 15px rgba(63, 61, 86, 0.14);
 }
 
-.input_file{
-    box-shadow: none;
+input[type="file"]{
+    display: none;
+}
+
+label {
+    padding: 20px 10px;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 15px rgba(63, 61, 86, 0.14);
+    color: #CB1E36;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 35px;
+    cursor: pointer;
+    height: 40px;
+    font-weight: bold;
 }
 
 .cadastrar_campanha{
@@ -119,37 +140,10 @@ input{
 }
 
 .img_cadastrar{
-    height: 80px;
-    width: 80px;
+    height: 90px;
+    width: 90px;
     border-radius: 55px;
     color: #CB1E36;
-}
-
-.box_preview{
-    width: 280px;
-    height: 550px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.img_exemplo{
-    height: 500px;
-    width: 280px;
-}
-
-.controle_preview{
-    height: 50px;
-    width: 150px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.botao_controle{
-    margin-top: 15px;
-    height: 30px;
-    width: 18px;
 }
 
 .container_section_2{
@@ -168,14 +162,15 @@ input{
 .container_table{
     background-color: #CB1E36;
     width: 100%;
-    height: 100px;
+    padding: 10px;
+    height: auto;
     display: flex;
     justify-content: center;
     border-radius: 15px;
 }
 
 .h2_registro{
-    font-size: 55px;
+    font-size: 4em;
     font-weight: bolder;
     color: #CB1E36;
     margin-bottom: 20px;
@@ -191,15 +186,16 @@ input{
 }
 
 th{
-    width: 200px;
-    font-size: 17px;
+    width: 220px;
+    font-size: 1em;
     font-weight: bold;
+    padding: 5px;
 }
 
 td{
-    font-size: 12px;
+    font-size: 1em;
     color: #fff;
-    width: 200px;
+    width: 220px;
     height: auto;
     display: flex;
     justify-content: center;
@@ -231,6 +227,7 @@ table{
 .img_acoes{
     height: 22px;
     width: 25px;
+    color: black;
 }
 
 .box_botao{
@@ -239,133 +236,13 @@ table{
     justify-content: space-between;
 }
 
-.tb{
+/* .tb{
     height: 10px;
-}
+} */
 
-@media (max-width: 991px){
 
-    header{
-        height: 70px;
-    }
 
-    .box_header{
-        width: 350px;
-    }
-
-    .icon_header {
-        width: 30px;
-        height: 30px;
-    }
-    
-    h1{
-        font-size: 30px;
-    }
-
-    .box_cadastrar{
-        width: 320px;
-        height: 460px;
-        border-radius: 20px;
-    }
-
-    input{
-        width: 240px;
-        margin-top: 30px;
-        height: 25px;
-        border-radius: 7px;
-    }
-
-    .h2_cadastrar{
-        font-size: 35px;
-        margin-bottom: 5px;
-    }
-
-    .img_cadastrar{
-        height: 65px;
-        width: 65px;
-    }
-
-    .cadastrar_campanha{
-        height: 65px;
-        width: 65px;
-    }
-
-    .cadastrar_campanha_2{
-        display: none;
-    }
-
-    .img_exemplo{
-        height: 410px;
-        width: 100%;
-    }
-
-    .box_preview{
-        height: 410px;
-        width: 240px;
-    }
-
-    .controle_preview{
-        width: 120px;
-    }
-
-    .h2_registro{
-        font-size: 35px;
-        margin-bottom: 10px;
-    }
-
-    th{
-        font-size: 10px;
-        width: 120px;
-    }
-
-    td{
-        font-size: 10px;
-        display: flex;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .box_botao{
-        width: 40px;
-    }
-
-    .botao_acoes{
-        height: 20px;
-        width: 20px;
-    }
-
-    .img_acoes{
-        height: 12px;
-        width: 12px;
-    }
-
-    .box_thead{
-        width: 100%;
-    }
-    
-    tr{
-        width: 60%;
-    }
-
-    tbody{
-        display: flex;
-        justify-content: center;
-    }
-
-    table{
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    thead{
-        display: flex;
-        justify-content: center;
-    }
-
-}
-
-@media (max-width: 768px){
+@media (max-width: 420px){
 
     .box_header{
         display: none;
@@ -433,7 +310,7 @@ table{
     h3{
         display: flex;
         width: 290px;
-        font-size: 30px;
+        font-size: 2em;
         color: #fff;
     }
 
