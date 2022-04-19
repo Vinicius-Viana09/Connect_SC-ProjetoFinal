@@ -68,6 +68,28 @@ export default class CadastrarCampanha extends Component {
       .then(this.buscarCampanhas);
   }
 
+  // excluirCampanha = (campanha) => {
+  //   console.log(
+  //     'A campanha ' + campanha.idCampanha + ' foi selecionada!',
+  //   );
+
+  //   fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha, {
+  //     method: 'DELETE',
+  //     headers: {
+  //       Authorization: 'Bearer' + localStorage.getItem('usuario-login'),
+  //     },
+  //   })
+  //   .then((resposta) => {
+  //     if (resposta === 204) {
+  //       console.log(
+  //         'Campanha ' + campanha.idCampanha + ' foi excluida!',
+  //       );
+  //     }
+  //   })
+
+  //   .catch(())
+  // }
+
 
 
   componentDidMount() {
@@ -83,6 +105,7 @@ export default class CadastrarCampanha extends Component {
           <div className="container container_header">
             <div className="box_header">
               <h1>Configurando Painel</h1>
+              {/* <a href="/Campanha">campanha</a> */}
               <img className="icon_header" src={icone} alt="icone" />
             </div>
             <img className="icon_header" src={user} alt="icone usuário" />
@@ -142,6 +165,7 @@ export default class CadastrarCampanha extends Component {
                         type="file"
                         name="arquivo"
                         id="arquivo"
+                        accept="image/png, image/jpeg"
                         value={this.state.arquivo}
                         onChange={this.atualizaStateCampo}
                       />
