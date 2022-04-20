@@ -6,7 +6,6 @@ import axios from 'axios';
 import icone from '../../assets/img/icone.svg'
 import user from '../../assets/img/user-icon.svg'
 import cadastrar from '../../assets/img/cadastrar.svg'
-import editar from '../../assets/img/editar.svg'
 import excluir from '../../assets/img/remover.svg'
 import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
 import { Component, React } from 'react';
@@ -68,28 +67,14 @@ export default class CadastrarCampanha extends Component {
       .then(this.buscarCampanhas);
   }
 
-  // excluirCampanha = (campanha) => {
-  //   console.log(
-  //     'A campanha ' + campanha.idCampanha + ' foi selecionada!',
-  //   );
-
-  //   fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha, {
-  //     method: 'DELETE',
-  //     headers: {
-  //       Authorization: 'Bearer' + localStorage.getItem('usuario-login'),
-  //     },
-  //   })
-  //   .then((resposta) => {
-  //     if (resposta === 204) {
-  //       console.log(
-  //         'Campanha ' + campanha.idCampanha + ' foi excluida!',
-  //       );
-  //     }
-  //   })
-
-  //   .catch(())
-  // }
-
+  excluirCampanha = (campanha) => {
+    console.log('A campanha ' + campanha.idCampanha + ' foi excluida')
+    fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha,
+      {
+        method: 'DELETE'
+      })
+    window.location.reload(true);
+  }
 
 
   componentDidMount() {
@@ -218,10 +203,11 @@ export default class CadastrarCampanha extends Component {
                               }).format(new Date(campanha.dataFim))}</td>
                               <td>
                                 <div className='box_botao'>
-                                  <button className='botao_acoes'>
-                                    <img className="img_acoes" src={editar}></img>
-                                  </button>
-                                  <button className='botao_acoes'>
+                                  <button
+                                    type="button"
+                                    className='botao_acoes'
+                                    onClick={() => this.excluirCampanha(campanha)}
+                                  >
                                     <img className="img_acoes" src={excluir}></img>
                                   </button>
                                 </div>

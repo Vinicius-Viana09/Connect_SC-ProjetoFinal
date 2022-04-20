@@ -230,12 +230,6 @@ table{
     color: black;
 }
 
-.box_botao{
-    width: 65px;
-    display: flex;
-    justify-content: space-between;
-}
-
 /* .tb{
     height: 10px;
 } */
