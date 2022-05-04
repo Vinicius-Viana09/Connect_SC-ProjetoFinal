@@ -2,17 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 
-import './index.css';
+// import './index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './pages/Home/Home.jsx'
-import TelaCampanha from './pages/Campanha/campanha.jsx'
+import Home from './pages/Home/Home.jsx';
+import Login from './pages/Login/login.jsx'
+import RespRegistroCampanha from './pages/RegistroCampResponsivo/RegCamanhasResponsivo.jsx'
 
 const routing = (
   <BrowserRouter>
     <div>
       <Routes>
-        <Route exact path="/" element={<Home/>} /> {/* Home */}
-        <Route exact path="/Campanha" element={<TelaCampanha/>} /> {/* Home */}
+        <Route exact path="/Home" element={<Home/>} /> {/* Home */}
+        <Route index element={<Login/>} /> {/* Login */}
       </Routes>
     </div>
   </BrowserRouter>

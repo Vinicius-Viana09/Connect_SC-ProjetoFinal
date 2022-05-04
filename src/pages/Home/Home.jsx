@@ -8,6 +8,7 @@ import user from '../../assets/img/user-icon.svg'
 import cadastrar from '../../assets/img/cadastrar.svg'
 import excluir from '../../assets/img/remover.svg'
 import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
+import cadastroResp from '../../assets/img/cadastro resp.svg'
 import { Component, React } from 'react';
 
 export default class CadastrarCampanha extends Component {
@@ -15,18 +16,14 @@ export default class CadastrarCampanha extends Component {
     super(props);
     this.state = {
       listaCampanha: [],
-      usuario: '',
+      idUsuario: '1',
       nomeCampanha: '',
       dataInicio: new Date(),
       dataFim: new Date(),
-      descricaoCampanha: '',
+      descricao: '',
       arquivo: ''
     }
   };
-
-  atualizaStateCampo = (campo) => {
-    this.setState({ [campo.target.name]: campo.target.value })
-  }
 
   buscarCampanhas = () => {
     fetch('http://localhost:5000/api/Campanhas/ListarTodos')
@@ -36,22 +33,29 @@ export default class CadastrarCampanha extends Component {
       .then(dados => this.setState({ listaCampanha: dados }))
   };
 
-  cadastrarCampanha = () => {
-    this.setState({ isLoading: true });
+  cadastrarCampanha = (event) => {
+    event.preventDefault();
 
-    let cadastro = {
-      nome: this.state.nomeCampanha,
-      nomeUsuario: this.state.usuario,
-      dataInicio: this.state.dataInicio,
-      dataFim: this.state.dataFim,
-      descricao: this.state.descricaoCampanha,
-      image: this.state.arquivo,
-    };
+    // this.setState({ isLoading: true });
+    let formdata = new FormData();
+
+    const target = document.getElementById('arquivo')
+    const file = target.files[0]
+    formdata.append('arquivo', file, file.name)
+
+    formdata.append('idUsuario', this.state.idUsuario)
+    formdata.append('nomeCampanha', this.state.nomeCampanha)
+    formdata.append('dataInicio', this.state.dataInicio)
+    formdata.append('dataFim', this.state.dataFim)
+    formdata.append('arquivo', this.state.arquivo)
+    formdata.append('descricao', this.state.descricao)
+
+    console.log(formdata)
 
     axios
-      .post('http://localhost:5000/api/Campanhas', cadastro, {
+      .post('http://localhost:5000/api/Campanhas', formdata, {
         headers: {
-          Authorization: 'Bearer' + localStorage.getItem('usuario-login')
+          Authorization: 'Bearer' + localStorage.getItem('')
         },
       })
       .then((resposta) => {
@@ -65,6 +69,8 @@ export default class CadastrarCampanha extends Component {
         this.setState({ isLoading: false })
       })
       .then(this.buscarCampanhas);
+
+      window.location.reload(true);
   }
 
   excluirCampanha = (campanha) => {
@@ -76,10 +82,12 @@ export default class CadastrarCampanha extends Component {
     window.location.reload(true);
   }
 
+  atualizaStateCampo = (campo) => {
+    this.setState({ [campo.target.name]: campo.target.value })
+  }
 
   componentDidMount() {
     this.buscarCampanhas()
-    this.cadastrarCampanha()
   }
 
 
@@ -89,19 +97,19 @@ export default class CadastrarCampanha extends Component {
         <header>
           <div className="container container_header">
             <div className="box_header">
-              <h1>Configurando Painel</h1>
+              <h1 className="h1">Configurando Painel</h1>
               {/* <a href="/Campanha">campanha</a> */}
               <img className="icon_header" src={icone} alt="icone" />
             </div>
             <img className="icon_header" src={user} alt="icone usuário" />
           </div>
+          <img className="icon_registro" src={cadastroResp} alt="" />
         </header>
 
         <main>
-
           <section className="section_1">
             <div className="container_section">
-              <h3>Cadastrar Campanha</h3>
+              <h3 className="h3">Cadastrar Campanha</h3>
               <div className="box_cadastrar">
                 <h2 className="h2_cadastrar" >Cadastrar</h2>
                 <form onSubmit={this.cadastrarCampanha}>
@@ -113,44 +121,51 @@ export default class CadastrarCampanha extends Component {
                     }}
                   >
                     <input
+                      className="input"
                       type="text"
                       placeholder="Nome da Campanha:"
                       name="nomeCampanha"
-                      value={this.state.nomeCampanha}
+                      defaultValue={this.state.nomeCampanha}
+                      required
                       onChange={this.atualizaStateCampo}
                     />
 
                     <input
+                      className="input"
                       type="date"
                       placeholder="Data de Início:"
                       name="dataInicio"
-                      value={this.state.dataInicio}
+                      defaultValue={this.state.dataInicio}
+                      required
                       onChange={this.atualizaStateCampo}
                     />
 
                     <input
+                      className="input"
                       type="date"
                       placeholder="Data de Expiração"
                       name="dataFim"
-                      value={this.state.dataFim}
+                      defaultValue={this.state.dataFim}
                       onChange={this.atualizaStateCampo}
                     />
 
                     <input
+                      className="input"
                       type="text"
                       placeholder="Descrição"
                       name="descricao"
-                      value={this.state.descricao}
+                      defaultValue={this.state.descricao}
                       onChange={this.atualizaStateCampo}
                     />
 
                     <div>
-                      <label for="arquivo">Escolher Arquivo</label>
+                      <label className="label" for="arquivo">Escolher Arquivo</label>
                       <input
+                        className="input"
                         type="file"
                         name="arquivo"
                         id="arquivo"
-                        accept="image/png, image/jpeg"
+                        accept="image/*"
                         value={this.state.arquivo}
                         onChange={this.atualizaStateCampo}
                       />
@@ -163,7 +178,10 @@ export default class CadastrarCampanha extends Component {
                       <img className="img_cadastrar" src={cadastrar} alt="botão cadastrar" />
                     </button>
 
-                    <button className="cadastrar_campanha_2">
+                    <button className="cadastrar_campanha_2"
+                      type="submit"
+                      onClick={this.cadastrarCampanha}
+                    >
                       <img className="img_cadastrar" src={cadastrar_resp} alt="botão cadastrar" />
                     </button>
                   </div>
@@ -181,7 +199,7 @@ export default class CadastrarCampanha extends Component {
                   <table>
                     <div className="box_table">
                       <thead className="box_thead">
-                        <tr >
+                        <tr>
                           <th>Nome da Campanha</th>
                           <th>Usuário</th>
                           <th>Data de Publicação</th>
@@ -223,6 +241,7 @@ export default class CadastrarCampanha extends Component {
             </div>
           </section>
         </main>
+        <footer></footer>
       </div>
     );
   };

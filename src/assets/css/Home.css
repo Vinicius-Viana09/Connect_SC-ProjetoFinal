@@ -37,7 +37,7 @@ header{
     justify-content: space-between;
 }
 
-h1{
+.h1{
     font-size: 2em;
     width: 405px;
     color: #fff;
@@ -49,7 +49,11 @@ h1{
     height: 50px;
 }
 
-h3{
+.icon_registro{
+    display: none;
+}
+
+.h3{
     display: none;
 }
 
@@ -83,17 +87,17 @@ section{
     font-size: 4em;
     font-weight: bolder;
     color: #fff;
-    margin-bottom: 20px;
+    margin-top: 30px;
     font-weight: bold;
 }
 
 .box_form{
     display: flex;
-    flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 
-input{
+.input{
     width: 500px;
     height: 40px;
     margin-top: 35px;
@@ -107,7 +111,7 @@ input[type="file"]{
     display: none;
 }
 
-label {
+.label {
     padding: 20px 10px;
     width: 500px;
     background-color: rgb(255, 255, 255);
@@ -137,6 +141,15 @@ label {
 
 .cadastrar_campanha_2{
     display: none;
+    height: 80px;
+    width: 80px;
+    margin-top: 45px;
+    box-shadow: 0px 0px 15px rgba(63, 61, 86, 0.14);
+    border: none;
+    border-radius: 55px;
+    color: #CB1E36;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .img_cadastrar{
@@ -230,13 +243,83 @@ table{
     color: black;
 }
 
-/* .tb{
-    height: 10px;
-} */
+footer{
+    height: 100px;
+}
 
 
+@media (max-width: 450px){
 
-@media (max-width: 420px){
+    body{
+        background-color: #CB1E36;
+    }
+
+    .section_1{
+        background-color: #CB1E36;
+        height: 480px;
+    }
+    
+    .container_section{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .box_cadastrar{
+        background-color: #fff;
+        height: 450px;
+        width: 340px;
+    }
+    
+    .cadastrar_campanha_2{
+        display: flex;
+        height: 60px;
+        width: 60px;
+        margin-bottom: 25px;
+        margin-top: 30px;
+    }
+    
+    .img_cadastrar{
+        height: 60px;
+        width: 60px;
+    }
+    
+
+    .box_cadastrar{
+        height: 450px;
+    }
+    
+    .h3{
+        display: flex;
+        color: #fff;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    
+    header{
+        height: 80px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .input{
+        height: 30px;
+        width: 230px;
+    }
+
+    .label{
+        height: 30px;
+        width: 230px;
+    }
+
+    .container_header{
+        padding: 0px;
+    }
+
+    .icon_registro{
+        display: flex;
+        height: 80px;
+        width: 80px;
+    }
 
     .box_header{
         display: none;
@@ -253,13 +336,6 @@ table{
     .box_registro{
         display: none;
     }
-
-    .container_section{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
     .container_section_2{
         display: none;
     }
@@ -267,53 +343,12 @@ table{
     .section_2{
         display: none;
     }
-
-    .box_cadastrar{
-        background-color: #fff;
+    
+    .h2_cadastrar{
+        display: none;
     }
 
     .cadastrar_campanha{
         display: none;
     }
-
-    .cadastrar_campanha_2{
-        display: flex;
-        margin-top: 45px;
-        box-shadow: 0px 0px 15px rgb(63 61 86 / 14%);
-        border: none;
-        border-radius: 55px;
-        color: #CB1E36;
-        background-color: transparent;
-        cursor: pointer;
-    }
-
-    .img_cadastrar{
-        height: 65px;
-        width: 65px;
-    }
-
-    main{
-        background-color: #CB1E36;
-        height: 100vh;
-        background-image: url("../img/cadastro\ resp.svg");
-        background-repeat: no-repeat;
-        background-size: 100px;
-        display: flex;
-    }
-
-    h3{
-        display: flex;
-        width: 290px;
-        font-size: 2em;
-        color: #fff;
-    }
-
-    .h2_cadastrar{
-        display: none;
-    }
-
-    .box_cadastrar{
-        height: 400px;
-    }
-
 }
