@@ -5,14 +5,18 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 // import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home/Home.jsx';
-import Login from './pages/Login/login.jsx'
-import RespRegistroCampanha from './pages/RegistroCampResponsivo/RegCamanhasResponsivo.jsx'
+import Login from './pages/Login/login.jsx';
+import CadastroUsuario from './pages/CadastroUsuario/cadastro';
+import ListaUsuario from './pages/ListaUsuario/listausuario';
+import RespRegistroCampanha from './pages/RegistroCampResponsivo/RegCamanhasResponsivo.jsx';
 
 const routing = (
   <BrowserRouter>
     <div>
       <Routes>
         <Route exact path="/Home" element={<Home/>} /> {/* Home */}
+        <Route exact path="/ListUser" element={<ListaUsuario/>} /> {/* Home */}
+        <Route exact path="/CadastroUser" element={<CadastroUsuario/>} /> {/* Home */}
         <Route index element={<Login/>} /> {/* Login */}
       </Routes>
     </div>

@@ -10,6 +10,7 @@ import excluir from '../../assets/img/remover.svg'
 import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
 import cadastroResp from '../../assets/img/cadastro resp.svg'
 import { Component, React } from 'react';
+import { Link } from "react-router-dom";
 
 export default class CadastrarCampanha extends Component {
   constructor(props) {
@@ -70,7 +71,7 @@ export default class CadastrarCampanha extends Component {
       })
       .then(this.buscarCampanhas);
 
-      window.location.reload(true);
+    window.location.reload(true);
   }
 
   excluirCampanha = (campanha) => {
@@ -101,12 +102,12 @@ export default class CadastrarCampanha extends Component {
               {/* <a href="/Campanha">campanha</a> */}
               <img className="icon_header" src={icone} alt="icone" />
             </div>
-            <img className="icon_header" src={user} alt="icone usuário" />
+            <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link>
           </div>
           <img className="icon_registro" src={cadastroResp} alt="" />
         </header>
 
-        <main>
+        <main className="main_home">
           <section className="section_1">
             <div className="container_section">
               <h3 className="h3">Cadastrar Campanha</h3>

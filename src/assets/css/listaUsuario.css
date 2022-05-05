@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.user2{
+    width: 0px;
+    display: none;
+}
+
+.main_listUser{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.titulo{
+    color: #CB1E36;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: bold;
+}
+
+.listaResponsiva{
+    display: none;
+}
+
+.tabela{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    height: auto;
+    width: 70%;
+    color: white;
+    background-color: #CB1E36;
+}
+
+.labels{
+    color: white;
+    height: 30px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 20px;
+}
+
+.icones{
+    width: 90%;
+}
+
+.icones tr{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.icones button{
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5px;
+}
+
+.funcoes{
+    width: 220px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media (max-width:450px){
+
+    body{
+        background-color: #CB1E36;
+    }
+    
+    .header{
+        height: auto;
+    }
+    .container{
+        padding: 0px;
+    }
+
+    h1, h2 {
+        display: none;
+    }
+
+    header img{
+        width: 0px;
+    }
+    
+    .user{
+       display: none;
+    }
+
+    .user2{
+        width: 100px;
+        display: block;
+    }
+    main{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tabela{
+       display: none;
+    }
+
+    .listaResponsiva{
+        border-radius: 20px;
+        display: block;
+        background-color: white;
+        height: 650px;
+        width: 360px;
+    }
+
+    .accordion{
+        position: relative;
+    }
+
+    #button{
+        display: none;
+    }
+}

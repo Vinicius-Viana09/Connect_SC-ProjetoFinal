@@ -2,7 +2,7 @@ import '../../assets/css/login.css';
 import { parseJwt, usuarioAutenticado } from '../../services/auth';
 import React from 'react';
 import icone from '../../assets/img/undraw.svg';
-import logo from '../../assets/img/Logo.svg';
+import logo from '../../assets/img/LogoSENAI.png';
 import { Component } from 'react';
 import axios from "axios";
 
@@ -71,14 +71,13 @@ class Login extends Component {
                 <main className="main">
 
                     <div className="ladoBranco">
-
-                        <img src={icone} alt="imagem" class="ilus" />
+                        <img src={icone} alt="imagem" className="ilus" />
                     </div>
 
                     <div id="lado_vermelho">
                         <div className="quadrado">
                             <div className="logo_text">
-                                <img className="logo" src={logo} alt="logo" />
+                                <img className="logo_login" src={logo} alt="logo" />
                             </div>
 
                             <div className="formDiv">
