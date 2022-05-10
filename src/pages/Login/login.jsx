@@ -41,7 +41,12 @@ class Login extends Component {
                     console.log(this.props);
                     console.log('Logado')
 
-                    if (parseJwt().role === '1' && '2') {
+                    if (parseJwt().role === '1') {
+                        window.location.href = "/Home"
+                        console.log('estou logado: ' + usuarioAutenticado())
+                    }
+
+                    if (parseJwt().role === '2') {
                         window.location.href = "/Home"
                         console.log('estou logado: ' + usuarioAutenticado())
                     }

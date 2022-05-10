@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
+import { parseJwt, usuarioAutenticado } from './services/auth';
 
-// import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home/Home.jsx';
 import Login from './pages/Login/login.jsx';
@@ -14,10 +14,10 @@ const routing = (
   <BrowserRouter>
     <div>
       <Routes>
-        <Route exact path="/Home" element={<Home/>} /> {/* Home */}
-        <Route exact path="/ListUser" element={<ListaUsuario/>} /> {/* Home */}
-        <Route exact path="/CadastroUser" element={<CadastroUsuario/>} /> {/* Home */}
-        <Route index element={<Login/>} /> {/* Login */}
+        <Route index element={<Login />} /> {/* Login */}
+        <Route exact path="/Home" element={<Home />} /> {/* Home */}
+        <Route exact path="/ListUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <ListaUsuario /> : <Navigate to='/' />} /> {/* Listagem de Usuário */}
+        <Route exact path="/CadastroUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <CadastroUsuario /> : <Navigate to='/' />} /> {/* Cadastro de Usuário */}
       </Routes>
     </div>
   </BrowserRouter>

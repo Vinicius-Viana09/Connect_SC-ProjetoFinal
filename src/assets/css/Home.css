@@ -238,9 +238,20 @@ table{
 }
 
 .img_acoes{
-    height: 22px;
-    width: 25px;
+    height: 24px;
+    width: 24px;
     color: black;
+}
+
+.box_botao{
+    display: flex;
+    width: 60px;
+    justify-content: space-between;
+}
+
+.checkbox{
+    height: 24px;
+    width: 24px;
 }
 
 footer{

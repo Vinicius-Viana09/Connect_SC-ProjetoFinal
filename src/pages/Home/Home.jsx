@@ -11,20 +11,23 @@ import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
 import cadastroResp from '../../assets/img/cadastro resp.svg'
 import { Component, React } from 'react';
 import { Link } from "react-router-dom";
+import { parseJwt, usuarioAutenticado } from '../../services/auth';
 
 export default class CadastrarCampanha extends Component {
   constructor(props) {
     super(props);
     this.state = {
       listaCampanha: [],
-      idUsuario: '1',
+      idUsuario: parseJwt().jti,
       nomeCampanha: '',
       dataInicio: new Date(),
       dataFim: new Date(),
       descricao: '',
-      arquivo: ''
+      arquivo: '',
+      campanhaAtiva: 'false'
     }
   };
+
 
   buscarCampanhas = () => {
     fetch('http://localhost:5000/api/Campanhas/ListarTodos')
@@ -50,6 +53,7 @@ export default class CadastrarCampanha extends Component {
     formdata.append('dataFim', this.state.dataFim)
     formdata.append('arquivo', this.state.arquivo)
     formdata.append('descricao', this.state.descricao)
+    formdata.append('campanhaAtiva', this.state.campanhaAtiva)
 
     console.log(formdata)
 
@@ -203,7 +207,7 @@ export default class CadastrarCampanha extends Component {
                         <tr>
                           <th>Nome da Campanha</th>
                           <th>Usuário</th>
-                          <th>Data de Publicação</th>
+                          <th>Data de Início</th>
                           <th>Data de Expiração</th>
                           <th>Ações</th>
                         </tr>
@@ -229,6 +233,7 @@ export default class CadastrarCampanha extends Component {
                                   >
                                     <img className="img_acoes" src={excluir}></img>
                                   </button>
+                                  <input name="btn_ativar" className="checkbox" type="radio" />
                                 </div>
                               </td>
                             </tr>
