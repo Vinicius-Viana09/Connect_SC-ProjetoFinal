@@ -8,6 +8,7 @@ import Home from './pages/Home/Home.jsx';
 import Login from './pages/Login/login.jsx';
 import CadastroUsuario from './pages/CadastroUsuario/cadastro';
 import ListaUsuario from './pages/ListaUsuario/listausuario';
+import TelaPainel from './pages/TelaPainel/ListaCampanha';
 import RespRegistroCampanha from './pages/RegistroCampResponsivo/RegCamanhasResponsivo.jsx';
 
 const routing = (
@@ -15,9 +16,10 @@ const routing = (
     <div>
       <Routes>
         <Route index element={<Login />} /> {/* Login */}
-        <Route exact path="/Home" element={<Home />} /> {/* Home */}
-        <Route exact path="/ListUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <ListaUsuario /> : <Navigate to='/' />} /> {/* Listagem de Usuário */}
-        <Route exact path="/CadastroUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <CadastroUsuario /> : <Navigate to='/' />} /> {/* Cadastro de Usuário */}
+        <Route exact path="/Home" element={usuarioAutenticado() && parseJwt().role === '1' || usuarioAutenticado() && parseJwt().role === '2' ? <Home/> : <Navigate to='/' />} /> {/* Home */}
+        <Route exact path="/ListUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <ListaUsuario/> : <Navigate to='/' />} /> {/* Listagem de Usuário */}
+        <Route exact path="/CadastroUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <CadastroUsuario/> : <Navigate to='/' />} /> {/* Cadastro de Usuário */}
+        <Route exact path="/Painel" element={usuarioAutenticado() && parseJwt().role === '3' ? <TelaPainel/> : <Navigate to='/'/>} /> 
       </Routes>
     </div>
   </BrowserRouter>

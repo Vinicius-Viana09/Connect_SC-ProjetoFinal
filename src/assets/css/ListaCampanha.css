@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mainCampanha{
+    height: 100vh;
+    display: flex;
+    justify-self: unset;
+    flex-direction: unset;
+    overflow: hidden;
+}
+
+/* .imgCampanha{
+    width: 1080px;
+    height: 1080px;
+} */
+
+/* .imgCurso{
+    width: 100%;
+    height: 100%;
+} */
+
+.infoCampanha{
+    /* width: 45vw; */
+    height: 100vh;
+    padding: 100px;
+    background-color: #CB1E36;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.divCamp{
+    color: white;
+    font-family: 'Montserrat', sans-serif; 
+    font-size: 1.5rem;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: justify;
+}
+
+.divCamp h2{
+    font-size: 2rem;
+}

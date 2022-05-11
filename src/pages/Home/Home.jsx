@@ -38,7 +38,7 @@ export default class CadastrarCampanha extends Component {
   };
 
   cadastrarCampanha = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     // this.setState({ isLoading: true });
     let formdata = new FormData();
@@ -75,7 +75,7 @@ export default class CadastrarCampanha extends Component {
       })
       .then(this.buscarCampanhas);
 
-    window.location.reload(true);
+    window.location.reload(true)
   }
 
   excluirCampanha = (campanha) => {
@@ -84,11 +84,19 @@ export default class CadastrarCampanha extends Component {
       {
         method: 'DELETE'
       })
-    window.location.reload(true);
+
+    window.location.reload(false)
+  }
+
+  preview(url) {
+    document.getElementById("foto").src=URL.createObjectURL(url);
   }
 
   atualizaStateCampo = (campo) => {
     this.setState({ [campo.target.name]: campo.target.value })
+    if (campo.target.name === 'arquivo') {
+      this.preview(campo.target.files[0])
+    }
   }
 
   componentDidMount() {
@@ -103,10 +111,11 @@ export default class CadastrarCampanha extends Component {
           <div className="container container_header">
             <div className="box_header">
               <h1 className="h1">Configurando Painel</h1>
-              {/* <a href="/Campanha">campanha</a> */}
               <img className="icon_header" src={icone} alt="icone" />
             </div>
-            <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link>
+
+            {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
+
           </div>
           <img className="icon_registro" src={cadastroResp} alt="" />
         </header>
@@ -174,6 +183,8 @@ export default class CadastrarCampanha extends Component {
                         value={this.state.arquivo}
                         onChange={this.atualizaStateCampo}
                       />
+                      
+                      <img id="foto" src="" width="100px" height="100px"/>
                     </div>
 
                     <button className="cadastrar_campanha"

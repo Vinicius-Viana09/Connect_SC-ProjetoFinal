@@ -50,6 +50,11 @@ class Login extends Component {
                         window.location.href = "/Home"
                         console.log('estou logado: ' + usuarioAutenticado())
                     }
+
+                    if (parseJwt().role === '3') {
+                        window.location.href = "/Painel"
+                        console.log('estou logado: ' + usuarioAutenticado())
+                    }
     
                     else {
                         this.props.history.push('/Home');
