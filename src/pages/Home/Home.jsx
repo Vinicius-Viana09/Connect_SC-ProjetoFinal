@@ -38,9 +38,9 @@ export default class CadastrarCampanha extends Component {
   };
 
   cadastrarCampanha = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
 
-    // this.setState({ isLoading: true });
+    this.setState({ isLoading: true });
     let formdata = new FormData();
 
     const target = document.getElementById('arquivo')
@@ -85,7 +85,7 @@ export default class CadastrarCampanha extends Component {
         method: 'DELETE'
       })
 
-    window.location.reload(false)
+    window.location.reload(true)
   }
 
   preview(url) {
