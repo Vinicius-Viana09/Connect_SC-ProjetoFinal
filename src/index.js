@@ -20,6 +20,7 @@ const routing = (
         <Route exact path="/ListUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <ListaUsuario/> : <Navigate to='/' />} /> {/* Listagem de Usuário */}
         <Route exact path="/CadastroUser" element={usuarioAutenticado() && parseJwt().role === '1' ? <CadastroUsuario/> : <Navigate to='/' />} /> {/* Cadastro de Usuário */}
         <Route exact path="/Painel" element={usuarioAutenticado() && parseJwt().role === '3' ? <TelaPainel/> : <Navigate to='/'/>} /> 
+        <Route exact path="/ListCampanha" element={<RespRegistroCampanha/>} />
       </Routes>
     </div>
   </BrowserRouter>

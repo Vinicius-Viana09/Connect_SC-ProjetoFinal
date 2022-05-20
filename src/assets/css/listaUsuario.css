@@ -12,6 +12,11 @@
     display: none;
 }
 
+.h1_list_user{
+    color: #fff;
+    font-weight: normal;
+}
+
 .main_listUser{
     height: 50vh;
     display: flex;
@@ -93,7 +98,11 @@
         padding: 0px;
     }
 
-    h1, h2 {
+    .h2_list_user{
+        display: none;
+    }
+
+    .h1_list_user{
         display: none;
     }
 

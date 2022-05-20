@@ -6,7 +6,7 @@ export default class Campanha extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listaCampanha: [], 
+            listaCampanha: [],
 
             idUsuario: '',
             nomeCampanha: '',
@@ -18,7 +18,7 @@ export default class Campanha extends Component {
     };
 
     buscarCampanhasAtivas = () => {
-        fetch('http://localhost:5000/api/Campanhas/AtivoList')
+        fetch('https://tccbackend.azurewebsites.net/api/Campanhas/AtivoList')
 
             .then(resposta => resposta.json())
 
@@ -34,13 +34,11 @@ export default class Campanha extends Component {
             <body>
                 <main className="mainCampanha">
                     <section className="imgCampanha">
-                        
-                    {this.state.listaCampanha.map((campanha) => {
-                        console.log(campanha.arquivo)
+
+                        {this.state.listaCampanha.map((campanha) => {
+                            console.log(campanha.arquivo)
                             return (
-                                
-                                    <img classname="imgCurso"src={"http://localhost:5000/StaticFiles/"+ campanha.arquivo}/>
-                               
+                                <img classname="imgCurso" src={"https://tccbackend.azurewebsites.net/StaticFiles/" + campanha.arquivo} />
                             )
                         })}
                     </section>

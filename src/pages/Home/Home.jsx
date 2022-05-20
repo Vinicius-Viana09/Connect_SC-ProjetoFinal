@@ -24,10 +24,9 @@ export default class CadastrarCampanha extends Component {
       dataFim: new Date(),
       descricao: '',
       arquivo: '',
-      campanhaAtiva: 'false'
+      campanhaAtiva: 'true'
     }
   };
-
 
   buscarCampanhas = () => {
     fetch('http://localhost:5000/api/Campanhas/ListarTodos')
@@ -89,7 +88,7 @@ export default class CadastrarCampanha extends Component {
   }
 
   preview(url) {
-    document.getElementById("foto").src=URL.createObjectURL(url);
+    document.getElementById("foto").src = URL.createObjectURL(url);
   }
 
   atualizaStateCampo = (campo) => {
@@ -117,7 +116,7 @@ export default class CadastrarCampanha extends Component {
             {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
 
           </div>
-          <img className="icon_registro" src={cadastroResp} alt="" />
+          <img className="icon_cadastro" src={cadastroResp} alt="" />
         </header>
 
         <main className="main_home">
@@ -183,8 +182,8 @@ export default class CadastrarCampanha extends Component {
                         value={this.state.arquivo}
                         onChange={this.atualizaStateCampo}
                       />
-                      
-                      <img id="foto" src="" width="100px" height="100px"/>
+
+                      <img className="img_img" id="foto" src="" width="100px" height="100px" />
                     </div>
 
                     <button className="cadastrar_campanha"
@@ -244,7 +243,6 @@ export default class CadastrarCampanha extends Component {
                                   >
                                     <img className="img_acoes" src={excluir}></img>
                                   </button>
-                                  <input name="btn_ativar" className="checkbox" type="radio" />
                                 </div>
                               </td>
                             </tr>

@@ -52,7 +52,7 @@ export default class Listar extends Component {
                 <header>
                     <div className="container container_header">
                         <div className="box_header">
-                            <Link className="link" to="/Home"><h1 className="h1">Gerenciando Usuários</h1></Link>
+                            <Link className="link" to="/Home"><h1 className="h1_list_user">Gerenciando Usuários</h1></Link>
                             <img className="icon_header" src={icone} alt="icone" />
                         </div>
                         <img className='user2' src={user2}></img>
@@ -61,7 +61,7 @@ export default class Listar extends Component {
 
                 <main className="main_listUser">
                     <div className='titulo'>
-                        <h2>Usuários</h2>
+                        <h2 className="h2_list_user">Usuários</h2>
                     </div>
                     <div className="listaResponsiva">
                         <div className="accordion">
