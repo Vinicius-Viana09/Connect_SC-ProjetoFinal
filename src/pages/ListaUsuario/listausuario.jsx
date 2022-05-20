@@ -5,6 +5,7 @@ import Exc from '../../assets/img/remover.svg'
 import Add from '../../assets/img/Add.png'
 import '../../assets/css/listaUsuario.css'
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 
 export default class Listar extends Component {
@@ -20,11 +21,17 @@ export default class Listar extends Component {
     }
 
     buscarUsuarios = () => {
-        fetch('http://localhost:5000/api/Usuarios/Listar')
-
-            .then(resposta => resposta.json())
-
-            .then(dados => this.setState({ listaUsuario: dados }))
+        axios.get('http://localhost:5000/api/Usuarios/Listar', 
+        {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+        .then(resposta => {
+            if (resposta.status === 200) {
+                this.setState({ listaUsuario: resposta.data })
+            }
+        })
     }
 
     excluirUsuarios = (usuario) => {

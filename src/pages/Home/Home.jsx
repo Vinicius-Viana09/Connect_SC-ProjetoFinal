@@ -54,12 +54,10 @@ export default class CadastrarCampanha extends Component {
     formdata.append('descricao', this.state.descricao)
     formdata.append('campanhaAtiva', this.state.campanhaAtiva)
 
-    console.log(formdata)
-
     axios
       .post('http://localhost:5000/api/Campanhas', formdata, {
         headers: {
-          Authorization: 'Bearer' + localStorage.getItem('')
+          Authorization: 'Bearer' + localStorage.getItem('usuario-login')
         },
       })
       .then((resposta) => {
@@ -74,7 +72,6 @@ export default class CadastrarCampanha extends Component {
       })
       .then(this.buscarCampanhas);
 
-    window.location.reload(true)
   }
 
   excluirCampanha = (campanha) => {

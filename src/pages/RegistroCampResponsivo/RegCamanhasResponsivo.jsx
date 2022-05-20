@@ -27,7 +27,7 @@ export default class CadastrarCampanha extends Component {
   };
 
   buscarCampanhas = () => {
-    fetch('https://tccbackend.azurewebsites.net/api/Campanhas/ListarTodos')
+    fetch('http://localhost:5000/api/Campanhas/ListarTodos')
 
       .then(resposta => resposta.json())
 
@@ -36,7 +36,7 @@ export default class CadastrarCampanha extends Component {
 
   excluirCampanha = (campanha) => {
     console.log('A campanha ' + campanha.idCampanha + ' foi excluida')
-    fetch('https://tccbackend.azurewebsites.net/api/Campanhas/' + campanha.idCampanha,
+    fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha,
       {
         method: 'DELETE'
       })
