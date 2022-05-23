@@ -38,7 +38,7 @@ export default class Campanha extends Component {
                         {this.state.listaCampanha.map((campanha) => {
                             console.log(campanha.arquivo)
                             return (
-                                <img classname="imgCurso" src={"http://localhost:5000/StaticFiles/" + campanha.arquivo} />
+                                <img className="imgCurso" src={"http://localhost:5000/StaticFiles/" + campanha.arquivo} />
                             )
                         })}
                     </section>

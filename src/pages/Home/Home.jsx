@@ -24,7 +24,7 @@ export default class CadastrarCampanha extends Component {
       dataFim: new Date(),
       descricao: '',
       arquivo: '',
-      campanhaAtiva: 'true'
+      campanhaAtiva: 'false'
     }
   };
 
@@ -75,11 +75,14 @@ export default class CadastrarCampanha extends Component {
   }
 
   excluirCampanha = (campanha) => {
-    console.log('A campanha ' + campanha.idCampanha + ' foi excluida')
-    fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha,
-      {
-        method: 'DELETE'
-      })
+    console.log('A campanha ' + campanha.idCampanha + ' foi selecionada')
+
+    fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
 
     window.location.reload(true)
   }
@@ -216,6 +219,7 @@ export default class CadastrarCampanha extends Component {
                           <th>Usuário</th>
                           <th>Data de Início</th>
                           <th>Data de Expiração</th>
+                          <th>Status</th>
                           <th>Ações</th>
                         </tr>
                       </thead>
@@ -231,6 +235,7 @@ export default class CadastrarCampanha extends Component {
                               <td>{Intl.DateTimeFormat("pt-BR", {
                                 year: "numeric", month: "numeric", day: "numeric"
                               }).format(new Date(campanha.dataFim))}</td>
+                              <td>{campanha.campanhaAtiva === true ? 'Ativa' : 'Inativa'}</td>
                               <td>
                                 <div className='box_botao'>
                                   <button
