@@ -50,6 +50,12 @@ header{
     height: 50px;
 }
 
+.div_btn_home{
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+
 .icon_cadastro{
     display: none;
 }

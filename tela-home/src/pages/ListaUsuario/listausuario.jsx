@@ -65,7 +65,6 @@ export default class Listar extends Component {
                             <Link className="link" to="/Home"><h1 className="h1_list_user">Gerenciando Usuários</h1></Link>
                             <img className="icon_header" src={icone} alt="icone" />
                         </div>
-                        <img className='user2' src={user2}></img>
                     </div>
                 </header>
 

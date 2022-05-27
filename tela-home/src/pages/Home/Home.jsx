@@ -9,6 +9,9 @@ import cadastrar from '../../assets/img/cadastrar.svg'
 import excluir from '../../assets/img/remover.svg'
 import cadastrar_resp from '../../assets/img/btn cadastrar resp.svg'
 import cadastroResp from '../../assets/img/cadastro resp.svg'
+import update from '../../assets/img/update.png'
+import logout from '../../assets/img/sair 1.png'
+
 import { Component, React } from 'react';
 import { Link } from "react-router-dom";
 import { parseJwt, usuarioAutenticado } from '../../services/auth';
@@ -35,6 +38,19 @@ export default class CadastrarCampanha extends Component {
 
       .then(dados => this.setState({ listaCampanha: dados }))
   };
+
+  mudarStatusCampanha = (campanha) => {
+    console.log('A campanha ' + campanha.idCampanha + ' foi selecionada')
+
+    fetch('http://localhost:5000/api/Campanhas/Ativo/' + campanha.idCampanha, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+      }
+    })
+
+    window.location.reload(true)
+  }
 
   cadastrarCampanha = (event) => {
     event.preventDefault();
@@ -110,11 +126,13 @@ export default class CadastrarCampanha extends Component {
           <div className="container container_header">
             <div className="box_header">
               <h1 className="h1">Configurando Painel</h1>
-              <img className="icon_header" src={icone} alt="icone" />
+              <img className="icon_header" src={icone} alt="icone"/>
             </div>
 
-            {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
-
+            <div className="div_btn_home">
+              {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
+              <Link to="/"><img className="icon_header" src={logout} alt="icone logout" /></Link>
+            </div>
           </div>
           <img className="icon_cadastro" src={cadastroResp} alt="" />
         </header>
@@ -244,6 +262,13 @@ export default class CadastrarCampanha extends Component {
                                     onClick={() => this.excluirCampanha(campanha)}
                                   >
                                     <img className="img_acoes" src={excluir}></img>
+                                  </button>
+                                  <button
+                                    type="button"
+                                    className='botao_acoes'
+                                    onClick={() => this.mudarStatusCampanha(campanha)}
+                                  >
+                                    <img className="img_acoes" src={update}></img>
                                   </button>
                                 </div>
                               </td>

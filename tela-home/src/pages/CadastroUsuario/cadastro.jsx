@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import imgCadastro from '../../assets/img/img_cadastro.png'
-import logoSenai from '../../assets/img/LogoSENAI.png'
+import logo from '../../assets/img/Logo Original.png'
 import '../../assets/css/cadastro.css'
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import axios from "axios";
 
 export default class Cadastro extends Component {
@@ -42,7 +41,7 @@ export default class Cadastro extends Component {
             .then(resposta => {
                 if (resposta.status === 200) {
                     console.log('Usuário cadastrado');
-                    window.location.replace("http://localhost:3000")
+                    window.location.replace("http://localhost:3000/ListUser")
                 }
             })
 
@@ -71,7 +70,7 @@ export default class Cadastro extends Component {
                 </div>
 
                 <div className="ladoV">
-                    <Link to="/ListUser"><img className='logoSenai' src={logoSenai}></img></Link>
+                    <Link to="/ListUser"><img className='logoSenai' src={logo}></img></Link>
                     <div className='divForm'>
 
                         <form onSubmit={this.cadastrarUsuarios} className='formulario'>

@@ -25,6 +25,11 @@
     justify-content: center;
 }
 
+.logo_login{
+    height: 100px;
+    width: 500px;
+}
+
 #lado_vermelho{
     background-color:#CB1E36 ;
     width: 50vw;

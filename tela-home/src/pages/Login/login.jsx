@@ -2,7 +2,7 @@ import '../../assets/css/login.css';
 import { parseJwt, usuarioAutenticado } from '../../services/auth';
 import React from 'react';
 import icone from '../../assets/img/undraw.svg';
-import logo from '../../assets/img/LogoSENAI.png';
+import logo from '../../assets/img/Logo Original.png';
 import { Component } from 'react';
 import axios from "axios";
 
