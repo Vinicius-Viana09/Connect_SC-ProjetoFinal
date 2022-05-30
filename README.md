@@ -41,6 +41,7 @@
     <th>Integrantes</th>
     <th>Github</th>
     <th>E-mail</th>
+    <th>Linkedin</th>
   </tr>
   <tr>
     <td>Guilherme Cardoso</td>
