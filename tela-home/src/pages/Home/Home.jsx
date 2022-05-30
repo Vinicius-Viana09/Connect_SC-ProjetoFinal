@@ -131,7 +131,7 @@ export default class CadastrarCampanha extends Component {
 
             <div className="div_btn_home">
               {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
-              <Link to="/"><img className="icon_header" src={logout} alt="icone logout" /></Link>
+              <Link to="/"><img className="icon_logout" src={logout} alt="icone logout" /></Link>
             </div>
           </div>
           <img className="icon_cadastro" src={cadastroResp} alt="" />

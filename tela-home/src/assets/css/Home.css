@@ -50,10 +50,16 @@ header{
     height: 50px;
 }
 
+.icon_logout{
+    width: 35px;
+    height: 40px;
+}
+
 .div_btn_home{
     width: 120px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .icon_cadastro{
