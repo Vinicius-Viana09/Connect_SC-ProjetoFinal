@@ -212,8 +212,8 @@ input[type="file"]{
 }
 
 th{
-    width: 220px;
-    font-size: 1em;
+    width: 200px;
+    font-size: 18px;
     font-weight: bold;
     padding: 5px;
 }
@@ -221,7 +221,7 @@ th{
 td{
     font-size: 1em;
     color: #fff;
-    width: 220px;
+    width: 200px;
     height: auto;
     display: flex;
     justify-content: center;

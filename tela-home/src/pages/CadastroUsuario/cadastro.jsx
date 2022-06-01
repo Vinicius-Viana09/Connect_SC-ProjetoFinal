@@ -31,7 +31,7 @@ export default class Cadastro extends Component {
 
         };
 
-        axios.post('http://localhost:5000/api/Usuarios', cadastro,
+        axios.post('https://senai-tcc-backend.azurewebsites.net/api/Usuarios', cadastro,
             {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')

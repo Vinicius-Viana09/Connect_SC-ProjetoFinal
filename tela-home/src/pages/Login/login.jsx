@@ -24,7 +24,7 @@ class Login extends Component {
 
         this.setState({ erroMensagem: '', isLoading: true })
 
-        axios.post('http://localhost:5000/api/Login', {
+        axios.post('https://senai-tcc-backend.azurewebsites.net/api/Login', {
             email: this.state.email,
             senha: this.state.senha,
 

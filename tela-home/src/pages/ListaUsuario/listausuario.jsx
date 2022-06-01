@@ -21,7 +21,7 @@ export default class Listar extends Component {
     }
 
     buscarUsuarios = () => {
-        axios.get('http://localhost:5000/api/Usuarios/Listar',
+        axios.get('https://senai-tcc-backend.azurewebsites.net/api/Usuarios/Listar',
             {
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
@@ -36,14 +36,14 @@ export default class Listar extends Component {
 
     excluirUsuarios = (usuario) => {
         console.log('O usuario' + usuario.idUsuario + 'foi excluido')
-        fetch('http://localhost:5000/api/Usuarios/' + usuario.idUsuario,
+        fetch('https://senai-tcc-backend.azurewebsites.net/api/Usuarios/' + usuario.idUsuario,
             {
                 method: 'DELETE',
                 headers: {
                     'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
                 }
             })
-        window.location.reload(true);
+            .then(this.buscarUsuarios);
     }
     atualizaEstadoTitulo = async (event) => {
         await this.setState({ nome: event.target.value })

@@ -9,6 +9,7 @@
 .mainCampanha{
     height: 100vh;
     display: flex;
+    justify-content: space-between;
     justify-self: unset;
     flex-direction: unset;
     overflow: hidden;
@@ -24,7 +25,7 @@
 }
 
 .infoCampanha{
-    /* width: 45vw; */
+    /* width: 50vw; */
     height: 100vh;
     padding: 100px;
     background-color: #CB1E36;

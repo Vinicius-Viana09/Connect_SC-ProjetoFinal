@@ -32,7 +32,7 @@ export default class CadastrarCampanha extends Component {
   };
 
   buscarCampanhas = () => {
-    fetch('http://localhost:5000/api/Campanhas/ListarTodos')
+    fetch('https://senai-tcc-backend.azurewebsites.net/api/Campanhas/ListarTodos')
 
       .then(resposta => resposta.json())
 
@@ -42,14 +42,14 @@ export default class CadastrarCampanha extends Component {
   mudarStatusCampanha = (campanha) => {
     console.log('A campanha ' + campanha.idCampanha + ' foi selecionada')
 
-    fetch('http://localhost:5000/api/Campanhas/Ativo/' + campanha.idCampanha, {
+    fetch('https://senai-tcc-backend.azurewebsites.net/api/Campanhas/Ativo/' + campanha.idCampanha, {
       method: 'PATCH',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
       }
     })
 
-    window.location.reload(true)
+    .then(this.buscarCampanhas);
   }
 
   cadastrarCampanha = (event) => {
@@ -71,7 +71,7 @@ export default class CadastrarCampanha extends Component {
     formdata.append('campanhaAtiva', this.state.campanhaAtiva)
 
     axios
-      .post('http://localhost:5000/api/Campanhas', formdata, {
+      .post('https://senai-tcc-backend.azurewebsites.net/api/Campanhas', formdata, {
         headers: {
           Authorization: 'Bearer' + localStorage.getItem('usuario-login')
         },
@@ -93,14 +93,14 @@ export default class CadastrarCampanha extends Component {
   excluirCampanha = (campanha) => {
     console.log('A campanha ' + campanha.idCampanha + ' foi selecionada')
 
-    fetch('http://localhost:5000/api/Campanhas/' + campanha.idCampanha, {
+    fetch('https://senai-tcc-backend.azurewebsites.net/api/Campanhas/' + campanha.idCampanha, {
       method: 'DELETE',
       headers: {
         'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
       }
     })
 
-    window.location.reload(true)
+    .then(this.buscarCampanhas);
   }
 
   preview(url) {
@@ -126,7 +126,7 @@ export default class CadastrarCampanha extends Component {
           <div className="container container_header">
             <div className="box_header">
               <h1 className="h1">Configurando Painel</h1>
-              <img className="icon_header" src={icone} alt="icone"/>
+              <img className="icon_header" src={icone} alt="icone" />
             </div>
 
             <div className="div_btn_home">

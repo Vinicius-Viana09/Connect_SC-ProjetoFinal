@@ -18,7 +18,7 @@ export default class Campanha extends Component {
     };
 
     buscarCampanhasAtivas = () => {
-        fetch('http://localhost:5000/api/Campanhas/AtivoList')
+        fetch('https://senai-tcc-backend.azurewebsites.net/api/Campanhas/AtivoList')
 
             .then(resposta => resposta.json())
 
@@ -38,7 +38,7 @@ export default class Campanha extends Component {
                         {this.state.listaCampanha.map((campanha) => {
                             console.log(campanha.arquivo)
                             return (
-                                <img className="imgCurso" src={"http://localhost:5000/StaticFiles/" + campanha.arquivo} />
+                                <img className="imgCurso" src={"https://senai-tcc-backend.azurewebsites.net/staticfiles/images/" + campanha.arquivo} />
                             )
                         })}
                     </section>
