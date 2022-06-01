@@ -53,6 +53,7 @@ header{
 .icon_logout{
     width: 35px;
     height: 40px;
+    cursor: pointer;
 }
 
 .div_btn_home{

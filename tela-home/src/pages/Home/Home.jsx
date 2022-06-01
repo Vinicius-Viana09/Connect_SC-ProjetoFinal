@@ -49,7 +49,7 @@ export default class CadastrarCampanha extends Component {
       }
     })
 
-    .then(this.buscarCampanhas);
+      .then(this.buscarCampanhas);
   }
 
   cadastrarCampanha = (event) => {
@@ -100,11 +100,27 @@ export default class CadastrarCampanha extends Component {
       }
     })
 
-    .then(this.buscarCampanhas);
+      .then(this.buscarCampanhas);
   }
 
   preview(url) {
     document.getElementById("foto").src = URL.createObjectURL(url);
+  }
+
+  logout = () => {
+    window.localStorage.removeItem("usuario-login");
+    window.location.reload();
+  }
+
+  atualizarPorData = (campanha) => {
+    if (this.state.dataFim >= Date.now && this.state.campanhaAtiva == 'true') {
+      fetch('https://senai-tcc-backend.azurewebsites.net/api/Campanhas/Ativo/' + campanha.idCampanha, {
+        method: 'PATCH',
+        headers: {
+          'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+        }
+      })
+    }
   }
 
   atualizaStateCampo = (campo) => {
@@ -131,7 +147,7 @@ export default class CadastrarCampanha extends Component {
 
             <div className="div_btn_home">
               {parseJwt().role === "1" ? <Link to="/ListUser"><img className="icon_header" src={user} alt="icone usuário" /></Link> : <div></div>}
-              <Link to="/"><img className="icon_logout" src={logout} alt="icone logout" /></Link>
+              <img onClick={ this.logout } className="icon_logout" src={logout} alt="icone logout"/>
             </div>
           </div>
           <img className="icon_cadastro" src={cadastroResp} alt="" />
