@@ -11,6 +11,23 @@
     font-weight: normal;
 }
 
+.icon_voltar{
+    height: 45px;
+    width: 45px;
+}
+
+.div_btn_user{
+    width: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.p_voltar{
+    text-transform: none;
+}
+
 .main_listUser{
     height: 50vh;
     display: flex;
@@ -80,9 +97,9 @@
 }
 
 .funcoes{
-    width: 220px;
+    width: 200px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 @media (max-width:450px){

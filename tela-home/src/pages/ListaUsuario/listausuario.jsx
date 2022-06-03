@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import icone from '../../assets/img/icone.svg'
 import user2 from '../../assets/img/lista_usuario.svg'
+import voltar from '../../assets/img/voltar.png'
 import Exc from '../../assets/img/remover.svg'
 import Add from '../../assets/img/Add.png'
 import '../../assets/css/listaUsuario.css'
@@ -35,7 +36,7 @@ export default class Listar extends Component {
     }
 
     excluirUsuarios = (usuario) => {
-        console.log('O usuario' + usuario.idUsuario + 'foi excluido')
+        console.log('O usuario ' + usuario.idUsuario + ' foi excluido')
         fetch('https://senai-tcc-backend.azurewebsites.net/api/Usuarios/' + usuario.idUsuario,
             {
                 method: 'DELETE',
@@ -45,6 +46,7 @@ export default class Listar extends Component {
             })
             .then(this.buscarUsuarios);
     }
+
     atualizaEstadoTitulo = async (event) => {
         await this.setState({ nome: event.target.value })
         console.log(this.state.nome)
@@ -62,8 +64,13 @@ export default class Listar extends Component {
                 <header>
                     <div className="container container_header">
                         <div className="box_header">
-                            <Link className="link" to="/Home"><h1 className="h1_list_user">Gerenciando Usuários</h1></Link>
+                            <h1 className="h1_list_user">Gerenciando Usuários</h1>
                             <img className="icon_header" src={icone} alt="icone" />
+                        </div>
+
+                        <div className="div_btn_user">
+                            <Link className="link" to="/Home"><p>Voltar</p></Link>
+                            <Link to="/Home"><img className="icon_voltar" src={voltar} alt="" /></Link>
                         </div>
                     </div>
                 </header>

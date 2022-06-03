@@ -24,7 +24,7 @@
   </tr>
   <tr>
     <td>Jucelino Pinheiro</td>
-    <td> <a href="mailto:sara.gois@sp.senai.br"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
+    <td> <a href="mailto:jucelino.fatorlink@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
   </tr>
   <tr>
     <td>Sara Gois</td>
@@ -70,13 +70,13 @@
   <tr>
     <td>Vitor Labadessa</td>
     <td><a href="https://github.com/marchitiello-vitor"> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> </a> </td>
-    <td><a href="mailto:vitin.labadessa@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
+    <td><a href="mailto:Vmarchitiello59@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
     <td><a href="https://www.linkedin.com/in/vitor-labadessa-5b8989236/"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></td>
   </tr>
   <tr>
     <td>Miriã Felicio</td>
     <td><a href="https://github.com/miafelicio"> <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /> </a> </td>
-    <td><a href="mailto:miafelicio@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
+    <td><a href="mailto:miriafelicio7@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /> </a></td>
     <td><a href="https://www.linkedin.com/in/miri%C3%A3-felicio-44a917219/"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /> </a></td>
   </tr>
 </table>

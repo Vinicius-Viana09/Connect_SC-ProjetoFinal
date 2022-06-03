@@ -221,6 +221,7 @@ th{
 
 td{
     font-size: 1em;
+    padding: 2px;
     color: #fff;
     width: 200px;
     height: auto;
@@ -259,7 +260,7 @@ table{
 
 .box_botao{
     display: flex;
-    width: 60px;
+    width: 65px;
     justify-content: space-between;
 }
 
